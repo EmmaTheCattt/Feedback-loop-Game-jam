@@ -6,6 +6,7 @@ public class lock_to_ship : MonoBehaviour
 {
 
     public GameObject ship;
+    public bool works = true;
 
 
     // Start is called before the first frame update

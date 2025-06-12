@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     public Vector2 direction;
     public Vector3 mouseposition;
 
+    public bool works = true;
+
     public Rigidbody2D RB;
 
     private float x_move;
