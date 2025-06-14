@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 985e900ca5a645845a9b5a3db3e6e8d0, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 985e900ca5a645845a9b5a3db3e6e8d0, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -100,8 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ship: {fileID: 0}
-  speed: 3
+  speed: 3.5
   works: 1
+  num: 0
   Ship_colors:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
@@ -109,7 +114,9 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.49019608, b: 0, a: 1}
   - {r: 1, g: 1, b: 0, a: 1}
-  Enemy_colors: []
+  Enemy_colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
   SR: {fileID: 0}
   Direction: {x: 0, y: 0, z: 0}
 --- !u!58 &8175271433039961524

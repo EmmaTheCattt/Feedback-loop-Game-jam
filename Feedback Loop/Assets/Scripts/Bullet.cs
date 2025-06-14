@@ -8,7 +8,9 @@ public class Bullet : MonoBehaviour
     public GameObject Ship;
 
     public float speed = 1.0f;
-    public bool works = true;
+    public bool Enemy = false;
+
+    public int num;
 
     public Color[] Ship_colors;
     public Color[] Enemy_colors;
@@ -30,7 +32,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         SR = GetComponent<SpriteRenderer>();
-        int num = Random.Range(0, 2);
+        num = Random.Range(0, 2);
         SR.color = Ship_colors[num];
     }
 
@@ -40,13 +42,18 @@ public class Bullet : MonoBehaviour
         transform.position += transform.up * speed * Time.fixedDeltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("SOMETHING hit");
+
         if (other.CompareTag("Return"))
         {
             Debug.Log("We hit");
             Ship = GameObject.FindGameObjectWithTag("Player");
             transform.up = Ship.transform.position - transform.position;
+            
+            Enemy = true;
+            SR.color = Enemy_colors[num];
         }
     }
 }
