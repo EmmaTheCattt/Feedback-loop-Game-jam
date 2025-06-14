@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public Vector2 direction;
     public Vector3 mouseposition;
 
-    public bool works = true;
+    public static int alt = 1;
 
     public Rigidbody2D RB;
 
@@ -64,11 +64,20 @@ public class Movement : MonoBehaviour
         time += Time.deltaTime;
         if (Input.GetMouseButton(0) && firerate < time && Attack_mode == true)
         {
-            int num = Random.Range(0, 2);
+            alt = alt * -1;
             for (int i = 0; i < amount; i++)
             {
-                GameObject Bullet = Instantiate(Bullet1, shot_spots[num].transform.position, Quaternion.identity);
-                Bullet.transform.rotation = transform.rotation;
+                if (alt == 1)
+                {
+                    GameObject Bullet = Instantiate(Bullet1, shot_spots[0].transform.position, Quaternion.identity);
+                    Bullet.transform.rotation = transform.rotation;
+                }
+
+                if (alt == -1)
+                {
+                    GameObject Bullet2 = Instantiate(Bullet1, shot_spots[1].transform.position, Quaternion.identity);
+                    Bullet2.transform.rotation = transform.rotation;
+                }
             }
             time = 0;
         }
