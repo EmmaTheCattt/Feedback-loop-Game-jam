@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -33,6 +34,11 @@ public class Movement : MonoBehaviour
     public GameObject Bullet2;
     public GameObject Bullet3;
 
+    [Header("ANIMATION")]
+    public Animator Right_GUN;
+    public Animator Left_GUN;
+    public bool SHOT = false;
+
     
 
     // Start is called before the first frame update
@@ -47,6 +53,18 @@ public class Movement : MonoBehaviour
         PointTowardsMouse();
         Shot(Bullets);
         Move_Input();
+
+        //animation check always last
+        ANIMATIONS();
+    }
+
+    private void ANIMATIONS()
+    {
+        Right_GUN.SetBool("SHOT", SHOT);
+        Right_GUN.SetInteger("ALT", alt);
+
+        Left_GUN.SetBool("SHOT", SHOT);
+        Left_GUN.SetInteger("ALT", alt);
     }
 
     private void PointTowardsMouse()
@@ -61,6 +79,7 @@ public class Movement : MonoBehaviour
 
     private void Shot(int amount)
     {
+        SHOT = false;
         time += Time.deltaTime;
         if (Input.GetMouseButton(0) && firerate < time && Attack_mode == true)
         {
@@ -71,12 +90,14 @@ public class Movement : MonoBehaviour
                 {
                     GameObject Bullet = Instantiate(Bullet1, shot_spots[0].transform.position, Quaternion.identity);
                     Bullet.transform.rotation = transform.rotation;
+                    SHOT = true;
                 }
 
                 if (alt == -1)
                 {
                     GameObject Bullet2 = Instantiate(Bullet1, shot_spots[1].transform.position, Quaternion.identity);
                     Bullet2.transform.rotation = transform.rotation;
+                    SHOT = true;
                 }
             }
             time = 0;
