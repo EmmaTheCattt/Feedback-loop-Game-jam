@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public bool Enemy = false;
 
     public int num;
+    public static int num_cursor = -1;
 
     public Color[] Ship_colors;
     public Color[] Enemy_colors;
@@ -33,6 +34,7 @@ public class Bullet : MonoBehaviour
     {
         SR = GetComponent<SpriteRenderer>();
         num = Random.Range(0, 2);
+        num_cursor = num;
         SR.color = Ship_colors[num];
     }
 

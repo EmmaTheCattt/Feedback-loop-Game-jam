@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 5426878abaffec74fb6960d00ad2fea8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 5426878abaffec74fb6960d00ad2fea8, type: 3}
       propertyPath: m_TagString
@@ -395,6 +395,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262ca14c5ead24549ae9952ffd7ae815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SR: {fileID: 719925795}
+  Cursor_colors:
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+--- !u!212 &719925795 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: 6f258c7559637cf4bb017df9c1869112, type: 3}
+  m_PrefabInstance: {fileID: 2071377161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &840847564
 PrefabInstance:
   m_ObjectHideFlags: 0
