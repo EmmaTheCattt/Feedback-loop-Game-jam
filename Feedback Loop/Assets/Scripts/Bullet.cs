@@ -57,5 +57,10 @@ public class Bullet : MonoBehaviour
             Enemy = true;
             SR.color = Enemy_colors[num];
         }
+
+        if (other.CompareTag("WALL"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
