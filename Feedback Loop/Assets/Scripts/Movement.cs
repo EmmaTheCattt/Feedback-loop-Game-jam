@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     public static int alt = 1;
 
     public Rigidbody2D RB;
+    public CircleCollider2D col;
 
     private float x_move;
     private float y_move;
@@ -45,6 +46,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        col = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
